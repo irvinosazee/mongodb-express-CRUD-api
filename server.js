@@ -5,6 +5,7 @@ const { start } = require('./db.js');
 const app = express()
 start(app);  
 app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
