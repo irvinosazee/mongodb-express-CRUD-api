@@ -1,6 +1,6 @@
 // Tests
 const baseURI = 'https://mongodb-express-crud-api.vercel.app/'
-const URI = `${baseURI}/api/p/products`;
+const URI = `${baseURI}`;
 const test = async (URI) => {
     try {
         const response = await fetch(URI);
