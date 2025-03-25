@@ -1,18 +1,20 @@
 const express = require('express');
-const { start } = require('./db.js');
+const { dbConnect } = require('./db.js');
 const productRoutes = require('./routes/product.route.js')
 
 const app = express()
-start(app);
+dbConnect();
 
-// middleware
+// Middleware setup
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-
+// Base route
 app.get('/', (req, res) => {
     res.json({ message: 'Welcome to MongoDB CRUD API' })
 })
 
-// Product routes routes
+// Product routes
 app.use('/api/p/', productRoutes)
+
+module.exports = app;
