@@ -7,11 +7,11 @@ start(app);
 
 // middleware
 app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }))
 
 
 app.get('/', (req, res) => {
-    res.json({message: 'Welcome to MongoDB CRUD API'})
+    res.json({ message: 'Welcome to MongoDB CRUD API' })
 })
 
 // Product routes routes

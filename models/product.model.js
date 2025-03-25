@@ -10,20 +10,20 @@ const ProductSchema = new mongoose.Schema({
         required: true,
         default: 0,
     },
-    price:{
+    price: {
         type: Number,
         required: true,
         default: 0,
     },
-    image:{
+    image: {
         type: String,
         required: false,
     }
 },
-{
-    timestamps: true
-}
+    {
+        timestamps: true
+    }
 );
 
-const Product= mongoose.model('Product', ProductSchema) 
+const Product = mongoose.model('Product', ProductSchema)
 module.exports = Product

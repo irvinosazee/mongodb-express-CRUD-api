@@ -3,7 +3,7 @@ const ProductController = require('../controllers/product.controller');
 const router = express.Router()
 
 // Destruction of the ProductController
-const { createProduct, getAllProducts, getProductById, updateAProduct, DeleteAProduct} = ProductController
+const { createProduct, getAllProducts, getProductById, updateAProduct, DeleteAProduct } = ProductController
 
 // Create a product
 router.post('/products', createProduct);
@@ -12,7 +12,7 @@ router.post('/products', createProduct);
 router.get('/products', getAllProducts);
 
 // Get a product by id
-router.get('/product/:id',getProductById) 
+router.get('/product/:id', getProductById)
 
 // Update a product
 router.put('/product/:id', updateAProduct)
