@@ -2,7 +2,7 @@ const express = require('express');
 const ProductController = require('../controllers/product.controller');
 const router = express.Router()
 
-// Destruction of the ProductController object
+// Destruction of the ProductController
 const { createProduct, getAllProducts, getProductById, updateAProduct, DeleteAProduct} = ProductController
 
 // Create a product
