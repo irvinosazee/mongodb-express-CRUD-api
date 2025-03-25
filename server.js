@@ -3,7 +3,7 @@ const { dbConnect } = require('./db.js');
 const productRoutes = require('./routes/product.route.js')
 
 const app = express()
-dbConnect();
+dbConnect(app);
 
 // Middleware setup
 app.use(express.json())
@@ -16,5 +16,3 @@ app.get('/', (req, res) => {
 
 // Product routes
 app.use('/api/p/', productRoutes)
-
-module.exports = app;
