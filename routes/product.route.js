@@ -6,7 +6,7 @@ const router = express.Router()
 const { createProduct, getAllProducts, getProductById, updateAProduct, DeleteAProduct } = ProductController
 
 // Create a product
-router.post('/products', createProduct);
+router.post('/product', createProduct);
 
 // Get all products
 router.get('/products', getAllProducts);

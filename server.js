@@ -1,6 +1,7 @@
 const express = require('express');
 const { dbConnect } = require('./db.js');
 const productRoutes = require('./routes/product.route.js')
+const userRoutes = require('./routes/user.route.js')
 
 const app = express()
 dbConnect(app);
@@ -16,3 +17,6 @@ app.get('/', (req, res) => {
 
 // Product routes
 app.use('/api/p/', productRoutes)
+
+// User routes
+app.use('/api/u/', userRoutes)
