@@ -2,6 +2,7 @@ const express = require('express')
 const jwt = require('jsonwebtoken')
 const bcrypt =  require('bcrypt')
 
+const loginLimiter =  require('../middlewares/limiter.js')
 const authenticateToken = require('../middlewares/auth.js')
 const User = require('../models/user.model.js')
 const router = express.Router()
@@ -39,7 +40,7 @@ router.get('/users', async (req,res)=>{
 })
 
 // Login 
-router.post('/user/login', async (req,res) =>{
+router.post('/user/login',loginLimiter, async (req,res) =>{
   try {
     const { username, password } = req.body
     if (!username || !password ) {
