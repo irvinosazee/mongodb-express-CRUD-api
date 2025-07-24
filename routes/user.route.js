@@ -74,6 +74,14 @@ router.post('/user/login',loginLimiter, async (req,res) =>{
   }
 })
 
+// Logout
+router.post('/user/logout', async(req,res)=>{
+  try{
+    return res.status(200).json({ message: 'Logged out successfully. Please delete the token on your end.' });
+  }catch(err){
+    return res.status(500).json({message: err.message})
+  }
+})
 // Authorized User Dashboard 
 router.get('/user/d', authenticateToken, async (req,res)=>{
   try{
